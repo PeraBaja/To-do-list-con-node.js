@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises'
 import process, { exit } from 'node:process'
-import { deleteTask, getTasks, markTaskAsDone, newTask } from './todo.mjs'
+import { deleteTask, getTasks, markTaskAsDone, newTask } from './todo-csv.mjs'
 import { normalize } from 'node:path'
 
 let action = process.argv[2]
