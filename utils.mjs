@@ -1,5 +1,5 @@
 export function normalizeParams(params) {
-    params.map(param => {
+    params = params.map(param => {
         if (param === undefined) {
             return ''
         }
@@ -8,8 +8,8 @@ export function normalizeParams(params) {
     return params
 }
 
-export function validateId(){
-    if (Number.isInteger(params[0])) {
+export function validateId(id){
+    if (Number.isInteger(id)) {
         console.error('Error id erronea')
         exit(1)
     }

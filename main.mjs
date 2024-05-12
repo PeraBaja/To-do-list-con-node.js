@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises'
 import process, { exit } from 'node:process'
 import { deleteTask, getTasks, markTaskAsDone, newTask } from './todo-json.mjs'
 import { normalizeParams, validateId } from './utils.mjs'
+
 let action = process.argv[2]
 let params = process.argv.slice(3)
 
@@ -12,7 +13,7 @@ switch (action) {
         break
     }
     case '--delete': {
-        validateId()
+        validateId(params[0])
         deleteTask(params[0])
         break
     }
@@ -26,7 +27,7 @@ switch (action) {
         break
     }
     case '--done': {
-        validateId()
+        validateId(params[0])
         markTaskAsDone(params[0])
         break
     }
