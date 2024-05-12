@@ -1,8 +1,7 @@
 import { readFile } from 'node:fs/promises'
 import process, { exit } from 'node:process'
-import { deleteTask, getTasks, markTaskAsDone, newTask } from './todo-csv.mjs'
-import { normalize } from 'node:path'
-
+import { deleteTask, getTasks, markTaskAsDone, newTask } from './todo-json.mjs'
+import { normalizeParams, validateId } from './utils.mjs'
 let action = process.argv[2]
 let params = process.argv.slice(3)
 
@@ -37,19 +36,3 @@ switch (action) {
     }
 }
 
-function normalizeParams(params) {
-    params.map(param => {
-        if (param === undefined) {
-            return ''
-        }
-        return param
-    })
-    return params
-}
-
-function validateId(){
-    if (Number.isInteger(params[0])) {
-        console.error('Error id erronea')
-        exit(1)
-    }
-}
