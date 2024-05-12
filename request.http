@@ -1,0 +1,15 @@
+GET https://pokeapi.co/api/v2/pokemon/ditto
+
+### hola
+
+POST https://pokeapi.co/api/v2/pokemon
+
+Content-Type: : application/json
+
+{
+    "name": "ditto",
+    "type": "normal",
+    "moves": [
+        "transform"
+        ]
+}
