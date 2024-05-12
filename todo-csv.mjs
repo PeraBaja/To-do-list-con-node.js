@@ -21,8 +21,8 @@ export function deleteTask(id){
     let task = selectTask(id)
     let tasks = getTasks()
     let i = tasks.indexOf(task)
-    if(i != -1){
-        tasks = tasks.splice(i, 1)
+    if(i !== -1){
+        tasks.splice(i, 1)
     }
 
     
