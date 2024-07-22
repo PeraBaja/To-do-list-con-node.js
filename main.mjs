@@ -31,6 +31,19 @@ switch (action) {
         markTaskAsDone(params[0])
         break
     }
+    case '--help' | '--h': {
+        console.log(`🎉 Bienvenido/a al todolist de PeraBaja:\n 
+            Aquí algunos comandos que puedes intentar: \n
+            \t--new [nombre|fechaVencimiento|etiqueta]\n
+            \t--list [all|todo|done] lista todas las tareas\n
+            \t--done [id] marca la tarea seleccionada con el id como completada\n
+            \t--delete [id] elimina la tarea seleccionada con el id\n
+            \t--help o --h muestra este mensaje\n
+            \t--version muestra la versión de la aplicación\n
+
+            `)
+    }
+
     default: {
         console.error(`Error. ${action} no es valido`)
         break
