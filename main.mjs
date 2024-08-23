@@ -36,7 +36,7 @@ switch (action) {
         console.log('Tarea actualizada a "in-progress"!')
         break
     }
-    case 'help' | '-h': {
+    case 'help' || '-h': {
         console.log(`🎉 Bienvenido/a al todolist de PeraBaja:\n 
             Aquí algunos comandos que puedes intentar: \n
             \tadd [nombre|fechaVencimiento|etiqueta]\n
@@ -47,6 +47,7 @@ switch (action) {
             
             \thelp o -h muestra este mensaje\n
             `)
+        break
     }
 
     default: {
