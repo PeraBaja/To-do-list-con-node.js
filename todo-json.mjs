@@ -42,7 +42,7 @@ export function newTask(name, dueDate, label) {
         "label": label || ''
     }
     tasks.push(newTask)
-    let formatedTasks = JSON.stringify(tasks, null, '\t')
+    const formatedTasks = JSON.stringify(tasks, null, '\t')
     writeFileSync('./Recursos/Todo-list.json', formatedTasks, { 'encoding': 'utf8' })
 }
 
