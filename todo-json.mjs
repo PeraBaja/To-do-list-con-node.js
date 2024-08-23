@@ -75,5 +75,7 @@ export function getTasks(filter = 'all') {
         return filteredTasks
     }
 
+    //Si el filtro no es correcto
+
     console.error(`Error. No se reconoce el filtro ${filter}`)
 }
