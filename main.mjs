@@ -1,4 +1,3 @@
-import process, { exit } from 'node:process'
 import { deleteTask, getTasks, markTaskAs, newTask } from './todo-json.mjs'
 import { normalizeParams, validateId } from './utils.mjs'
 
