@@ -14,16 +14,13 @@ export function selectTask(id) {
 }
 
 export function deleteTask(id) {
-    let deletedTask
+    const selected_task = selectTask(id)
     let tasks = getTasks()
-    let i = tasks.findIndex(task => task.id == id)
-    if (i === -1) {
-        console.error('La tarea no existe')
-        exit(1)
-    }
-    deletedTask = tasks.splice(i, 1)[0]
+
+    tasks = tasks.filter(task => task.id !== selected_task.id)
+
     let formatedTasks = JSON.stringify(tasks, null, '\t')
-    console.log(`Tarea: ${deletedTask.name} eliminada`)
+    console.log(`Tarea: ${selected_task.name} eliminada`)
     writeFileSync('./Recursos/Todo-list.json', formatedTasks, {
         'encoding': 'utf8'
     })
