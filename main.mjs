@@ -34,7 +34,7 @@ switch (action) {
         console.log('Tarea actualizada a "in-progress"!')
         break
     }
-    case 'help' || '-h': {
+    case 'help': {
         console.log(`🎉 Bienvenido/a al todolist de PeraBaja:\n 
             Aquí algunos comandos que puedes intentar: \n
             \tadd [nombre|fechaVencimiento|etiqueta]\n
@@ -43,7 +43,7 @@ switch (action) {
             \tmark-in-progress [id] marca la tarea seleccionada con el id como en progreso\n
             \tdelete [id] elimina la tarea seleccionada con el id\n
             
-            \thelp o -h muestra este mensaje\n
+            \thelp, muestra este mensaje.\n
             `)
         break
     }
