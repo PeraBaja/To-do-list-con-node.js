@@ -1,10 +1,5 @@
 export function normalizeParams(params) {
-    params = params.map(param => {
-        if (param === undefined) {
-            return ''
-        }
-        return param
-    })
+    params = params.map(param => param !== undefined ? param : '')
     return params
 }
 
