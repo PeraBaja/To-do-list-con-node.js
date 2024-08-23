@@ -10,11 +10,13 @@ switch (action) {
     case 'new': {
         params = normalizeParams(params)
         newTask(params[0], params[1], params[2])
+        console.log('Tarea creada con exito!')
         break
     }
     case 'delete': {
         validateId(params[0])
         deleteTask(params[0])
+        console.log('Tarea borrada con exito!')
         break
     }
     case 'list': {
@@ -25,6 +27,7 @@ switch (action) {
     case 'mark-done': {
         validateId(params[0])
         markTaskAs(params[0], 'done')
+        console.log('Tarea actualizada a "done"!')
         break
     }
     case 'mark-in-progress': {
