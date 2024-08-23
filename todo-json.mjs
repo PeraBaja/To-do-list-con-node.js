@@ -37,7 +37,8 @@ export function newTask(name, dueDate, label) {
         "id": Number(lastTaskId) + 1,
         "name": name || '',
         "dueDate": dueDate || '',
-        "label": label || ''
+        "label": label || '',
+        "status": 'todo'
     }
     tasks.push(newTask)
     const formatedTasks = JSON.stringify(tasks, null, '\t')
