@@ -1,4 +1,4 @@
-import { deleteTask, getTasks, markTaskAs, newTask } from './todo-json.mjs'
+import { deleteTask, getTasks, markTaskAs, newTask, update } from './todo-json.mjs'
 import { normalizeParams, validateId } from './utils.mjs'
 
 let action = process.argv[2]
