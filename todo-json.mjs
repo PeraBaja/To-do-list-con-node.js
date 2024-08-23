@@ -21,10 +21,9 @@ export function deleteTask(id) {
 
     let formatedTasks = JSON.stringify(tasks, null, '\t')
     console.log(`Tarea: ${selected_task.name} eliminada`)
-    writeFileSync('./Recursos/Todo-list.json', formatedTasks, {
-        'encoding': 'utf8'
-    })
+    save(tasks)
 }
+
 export function newTask(name, dueDate, label) {
     let tasks = getTasks()
     let lastTaskId
@@ -40,8 +39,7 @@ export function newTask(name, dueDate, label) {
         "status": 'todo'
     }
     tasks.push(newTask)
-    const formatedTasks = JSON.stringify(tasks, null, '\t')
-    writeFileSync('./Recursos/Todo-list.json', formatedTasks, { 'encoding': 'utf8' })
+    save(tasks)
 }
 
 export function markTaskAs(id, status) {
@@ -52,7 +50,9 @@ export function markTaskAs(id, status) {
         if (task.id !== selected_task.id) return task
         return selected_task
     })
-
+    save(tasks)
+}
+function save(tasks){
     const formatedTasks = JSON.stringify(tasks, null, '\t')
     writeFileSync('./Recursos/Todo-list.json', formatedTasks, {
         'encoding': 'utf8'
