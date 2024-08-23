@@ -6,6 +6,6 @@ export function normalizeParams(params) {
 export function validateId(id){
     if (Number.isInteger(id)) {
         console.error('Error id erronea')
-        exit(1)
+        process.exit(1)
     }
 }

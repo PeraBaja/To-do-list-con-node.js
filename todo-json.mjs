@@ -1,5 +1,4 @@
 import { readFileSync, writeFileSync, appendFileSync, appendFile } from 'node:fs'
-import { exit } from 'node:process'
 
 export function selectTask(id) {
 
@@ -8,7 +7,7 @@ export function selectTask(id) {
 
     if (task === undefined) {
         console.error(`La tarea no existe con el id ${id}`)
-        exit(1)
+        process.exit(1)
     }
 
     return task
