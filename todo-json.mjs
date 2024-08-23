@@ -2,9 +2,10 @@ import { readFileSync, writeFileSync, appendFileSync, appendFile } from 'node:fs
 import { exit } from 'node:process'
 
 export function selectTask(id) {
-    let task
+
     let tasks = getTasks()
-    task = tasks.find(task => task.id == id)
+    const task = tasks.find(task => task.id == id)
+
     if (task === undefined) {
         console.error(`La tarea no existe con el id ${id}`)
         exit(1)
