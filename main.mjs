@@ -7,7 +7,7 @@ let action = process.argv[2]
 let params = process.argv.slice(3)
 
 switch (action) {
-    case 'new': {
+    case 'add': {
         params = normalizeParams(params)
         newTask(params[0], params[1], params[2])
         console.log('Tarea creada con exito!')
