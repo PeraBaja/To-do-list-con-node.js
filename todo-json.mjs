@@ -45,10 +45,13 @@ export function newTask(name, dueDate, label) {
 }
 
 export function markTaskAs(id, status) {
-    const task = selectTask(id)
-    const tasks = getTasks()
-    task.status = status
-    tasks[id] = task
+    const selected_task = selectTask(id)
+    let tasks = getTasks()
+    selected_task.status = status
+    tasks = tasks.map(task => {
+        if (task.id !== selected_task.id) return task
+        return selected_task
+    })
 
     const formatedTasks = JSON.stringify(tasks, null, '\t')
     writeFileSync('./Recursos/Todo-list.json', formatedTasks, {
