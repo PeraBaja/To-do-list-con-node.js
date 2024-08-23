@@ -22,6 +22,12 @@ switch (action) {
         else console.log(getTasks(params[0]))
         break
     }
+    case 'update': {
+        validateId(params[0])
+        update(params[0], params[1])
+        console.log('Tarea renombrada con exito!')
+        break
+    }
     case 'mark-done': {
         validateId(params[0])
         markTaskAs(params[0], 'done')

@@ -42,6 +42,19 @@ export function newTask(name, dueDate, label) {
     save(tasks)
 }
 
+
+export function update(id, name) {
+    const selected_task = selectTask(id)
+    let tasks = getTasks()
+    selected_task.name = name
+    tasks = tasks.map(task => {
+        if (task.id !== selected_task.id) return task
+        return selected_task
+    })
+
+    save(tasks)
+}
+
 export function markTaskAs(id, status) {
     const selected_task = selectTask(id)
     let tasks = getTasks()
