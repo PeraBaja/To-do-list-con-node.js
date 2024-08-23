@@ -30,7 +30,10 @@ export function deleteTask(id) {
 }
 export function newTask(name, dueDate, label) {
     let tasks = getTasks()
-    let lastTaskId = tasks[tasks.length - 1].id
+    let lastTaskId
+
+    if (tasks.length > 0) lastTaskId = tasks[tasks.length - 1].id
+    else lastTaskId = 0
 
     let newTask = {
         "id": Number(lastTaskId) + 1,
