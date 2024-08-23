@@ -7,31 +7,32 @@ let action = process.argv[2]
 let params = process.argv.slice(3)
 
 switch (action) {
-    case '--new': {
+    case 'new': {
         params = normalizeParams(params)
         newTask(params[0], params[1], params[2])
         break
     }
-    case '--delete': {
+    case 'delete': {
         validateId(params[0])
         deleteTask(params[0])
         break
     }
-    case '--list': {
-        if (params[0] === undefined){
-            console.log(getTasks())
-        }
-        else {
-            console.log(getTasks(params[0]))
-        }
+    case 'list': {
+        if (params[0] === undefined) console.log(getTasks())
+        else console.log(getTasks(params[0]))
         break
     }
-    case '--done': {
+    case 'mark-done': {
         validateId(params[0])
         markTaskAsDone(params[0])
         break
     }
-    case '--help' | '--h': {
+    case 'mark-in-progress': {
+        validateId(params[0])
+        mark(params[0])
+        break
+    }
+    case 'help' | '-h': {
         console.log(`🎉 Bienvenido/a al todolist de PeraBaja:\n 
             Aquí algunos comandos que puedes intentar: \n
             \t--new [nombre|fechaVencimiento|etiqueta]\n
