@@ -1,5 +1,5 @@
-import { deleteTask, getTasks, markTaskAs, newTask, update } from './todo-json.mjs'
-import { normalizeParams, validateId } from './utils.mjs'
+import { deleteTask, getTasks, markTaskAs, newTask, update, show } from './todo-json.mjs'
+import { normalizeParams, validateId} from './utils.mjs'
 
 let action = process.argv[2]
 let params = process.argv.slice(3)
@@ -18,8 +18,8 @@ switch (action) {
         break
     }
     case 'list': {
-        if (params[0] === undefined) console.log(getTasks())
-        else console.log(getTasks(params[0]))
+        if (params[0] === undefined) show(getTasks())
+        else show(getTasks(params[0]))
         break
     }
     case 'update': {

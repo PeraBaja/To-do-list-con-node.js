@@ -93,3 +93,10 @@ export function getTasks(filter = 'all') {
 
     console.error(`Error. No se reconoce el filtro ${filter}`)
 }
+export function show(tasks){
+    console.log('ID | Nombre | Fecha de Vencimiento | Etiqueta | Estado')
+    for (const task of tasks){
+        console.log(`${task.id} | ${task.name} | ${task.dueDate} | ${task.label} | ${task.status}`)
+    }
+
+}
