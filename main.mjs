@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises'
 import process, { exit } from 'node:process'
-import { deleteTask, getTasks, markTaskAsDone, newTask } from './todo-json.mjs'
+import { deleteTask, getTasks, markTaskAs, newTask } from './todo-json.mjs'
 import { normalizeParams, validateId } from './utils.mjs'
 
 let action = process.argv[2]
@@ -24,12 +24,13 @@ switch (action) {
     }
     case 'mark-done': {
         validateId(params[0])
-        markTaskAsDone(params[0])
+        markTaskAs(params[0], 'done')
         break
     }
     case 'mark-in-progress': {
         validateId(params[0])
-        mark(params[0])
+        markTaskAs(params[0], 'in-progress')
+        console.log('Tarea actualizada a "in-progress"!')
         break
     }
     case 'help' | '-h': {

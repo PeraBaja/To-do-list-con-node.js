@@ -43,16 +43,14 @@ export function newTask(name, dueDate, label) {
     writeFileSync('./Recursos/Todo-list.json', formatedTasks, { 'encoding': 'utf8' })
 }
 
-export function markTaskAsDone(id) {
-    let task = selectTask(id)
-    let values = task.split(',')
-    let tasks = getTasks()
-    let i = tasks.indexOf(task)
-    if (values[3] === 'todo') {
-        values[3] = 'done'
-    }
-    tasks[i] = values.join(',')
-    writeFileSync('./Recursos/Todo-list.json', tasks.join('\n'), {
+export function markTaskAs(id, status) {
+    const task = selectTask(id)
+    const tasks = getTasks()
+    task.status = status
+    tasks[id] = task
+
+    const formatedTasks = JSON.stringify(tasks, null, '\t')
+    writeFileSync('./Recursos/Todo-list.json', formatedTasks, {
         'encoding': 'utf8'
     })
 }
