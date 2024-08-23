@@ -60,7 +60,7 @@ export function markTaskAs(id, status) {
 
 
 export function getTasks(filter = 'all') {
-    let filtersKeywords = ['todo', 'done']
+    const filtersKeywords = ['todo', 'done', 'in-progress']
     let content = readFileSync('./Recursos/Todo-list.json', {
         'encoding': 'utf8'
     })
