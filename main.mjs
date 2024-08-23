@@ -39,13 +39,13 @@ switch (action) {
     case 'help' | '-h': {
         console.log(`🎉 Bienvenido/a al todolist de PeraBaja:\n 
             Aquí algunos comandos que puedes intentar: \n
-            \t--new [nombre|fechaVencimiento|etiqueta]\n
-            \t--list [all|todo|done] lista todas las tareas\n
-            \t--done [id] marca la tarea seleccionada con el id como completada\n
-            \t--delete [id] elimina la tarea seleccionada con el id\n
-            \t--help o --h muestra este mensaje\n
-            \t--version muestra la versión de la aplicación\n
-
+            \tadd [nombre|fechaVencimiento|etiqueta]\n
+            \tlist [all|todo|done|in-progress] lista todas las tareas\n
+            \tmark-done [id] marca la tarea seleccionada con el id como completada\n
+            \tmark-in-progress [id] marca la tarea seleccionada con el id como en progreso\n
+            \tdelete [id] elimina la tarea seleccionada con el id\n
+            
+            \thelp o -h muestra este mensaje\n
             `)
     }
 
