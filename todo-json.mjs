@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync } from 'node:fs'
+import { STATUS } from './status-enum.mjs'
 
 export function selectTask(id) {
 
@@ -62,7 +63,7 @@ function save(tasks){
 
 
 export function getTasks(filter = 'all') {
-    const filtersKeywords = ['todo', 'done', 'in-progress']
+    const filtersKeywords = Object.values(STATUS)
     let content = readFileSync('./Recursos/Todo-list.json', {
         'encoding': 'utf8'
     })

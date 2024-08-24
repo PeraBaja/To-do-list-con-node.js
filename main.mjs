@@ -1,5 +1,6 @@
 import { deleteT, getTasks, markAs, newTask, update, show, selectTask } from './todo-json.mjs'
 import { normalizeParams, validateId} from './utils.mjs'
+import { STATUS } from './status-enum.mjs'
 
 let action = process.argv[2]
 let params = process.argv.slice(3)
@@ -32,12 +33,12 @@ switch (action) {
         break
     }
     case 'mark-done': {
-        markAs(task, 'done')
+        markAs(task, STATUS.DONE)
         console.log('Tarea actualizada a "done"!')
         break
     }
     case 'mark-in-progress': {
-        markAs(task, 'in-progress')
+        markAs(task, STATUS.IN_PROGRESS)
         console.log('Tarea actualizada a "in-progress"!')
         break
     }
