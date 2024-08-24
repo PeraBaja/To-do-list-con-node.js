@@ -79,7 +79,8 @@ export function getTasks(filter = 'all') {
 
     //Si el filtro no es correcto
 
-    console.error(`Error. No se reconoce el filtro ${filter}`)
+    console.error(`Error. No se reconoce el filtro "${filter}"`)
+    process.exit(1)
 }
 export function show(tasks){
     console.log('ID | Nombre | Fecha de Vencimiento | Etiqueta | Estado')
