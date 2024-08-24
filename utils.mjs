@@ -3,11 +3,11 @@ export function normalizeParams(params) {
     return params
 }
 
-export function validateId(id){
+export function validateId(value){
     try 
     {
-        id = Number(id)
-        if (!Number.isInteger(id)) throw new Error;
+        value = Number(value)
+        if (!Number.isInteger(value)) throw new Error;
     }
     catch
     {
