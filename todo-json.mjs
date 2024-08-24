@@ -13,14 +13,9 @@ export function selectTask(id) {
     return task
 }
 
-export function deleteTask(id) {
-    const selected_task = selectTask(id)
+export function deleteT(task) {
     let tasks = getTasks()
-
-    tasks = tasks.filter(task => task.id !== selected_task.id)
-
-    let formatedTasks = JSON.stringify(tasks, null, '\t')
-    console.log(`Tarea: ${selected_task.name} eliminada`)
+    tasks = tasks.filter(t => t.id !== task.id)
     save(tasks)
 }
 
@@ -43,26 +38,19 @@ export function newTask(name, dueDate, label) {
 }
 
 
-export function update(id, name) {
-    const selected_task = selectTask(id)
+export function update(task, name) {
     let tasks = getTasks()
-    selected_task.name = name
-    tasks = tasks.map(task => {
-        if (task.id !== selected_task.id) return task
-        return selected_task
-    })
+    tasks.find(t => task.id === t.id)
+        .name = name
 
     save(tasks)
 }
 
-export function markTaskAs(id, status) {
-    const selected_task = selectTask(id)
+export function markAs(task, status) {
     let tasks = getTasks()
-    selected_task.status = status
-    tasks = tasks.map(task => {
-        if (task.id !== selected_task.id) return task
-        return selected_task
-    })
+    tasks.find(t => task.id === t.id)
+        .status = status
+
     save(tasks)
 }
 function save(tasks){

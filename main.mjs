@@ -1,8 +1,13 @@
-import { deleteTask, getTasks, markTaskAs, newTask, update, show } from './todo-json.mjs'
+import { deleteT, getTasks, markAs, newTask, update, show, selectTask } from './todo-json.mjs'
 import { normalizeParams, validateId} from './utils.mjs'
 
 let action = process.argv[2]
 let params = process.argv.slice(3)
+let task
+if (['delete', 'update', 'mark-done', 'mark-in-progress'].includes(action)){
+    validateId(params[0])
+    task = selectTask(params[0])
+}
 
 switch (action) {
     case 'add': {
@@ -12,9 +17,8 @@ switch (action) {
         break
     }
     case 'delete': {
-        validateId(params[0])
-        deleteTask(params[0])
-        console.log('Tarea borrada con exito!')
+        deleteT(task)
+        console.log(`Tarea "${task.name}" eliminada con exito!`)
         break
     }
     case 'list': {
@@ -23,20 +27,17 @@ switch (action) {
         break
     }
     case 'update': {
-        validateId(params[0])
-        update(params[0], params[1])
-        console.log('Tarea renombrada con exito!')
+        update(task, params[1])
+        console.log('Tarea renombrada con exito!' + `"${task.name}" -> ${params[1]}`)  
         break
     }
     case 'mark-done': {
-        validateId(params[0])
-        markTaskAs(params[0], 'done')
+        markAs(task, 'done')
         console.log('Tarea actualizada a "done"!')
         break
     }
     case 'mark-in-progress': {
-        validateId(params[0])
-        markTaskAs(params[0], 'in-progress')
+        markAs(task, 'in-progress')
         console.log('Tarea actualizada a "in-progress"!')
         break
     }
