@@ -1,7 +1,5 @@
 <a id="readme-top"></a>
 
-[![MIT License][license-shield]][license-url]
-
 <h3 align="center">Todo-list-node.js</h3>
 
   <p align="center">
