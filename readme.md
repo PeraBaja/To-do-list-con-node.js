@@ -3,12 +3,8 @@
 <h3 align="center">Todo-list-node.js</h3>
 
   <p align="center">
-    Project made for <a href="https://roadmap.sh">roadmap.sh</a> as a backend project.
+    Project made for <a href="https://roadmap.sh/projects/task-tracker">roadmap.sh</a> as a backend project.
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 ### Built With
 
