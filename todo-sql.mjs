@@ -3,7 +3,7 @@ import { error } from 'node:console'
 
 const client = new pg.Client({
     host: 'localhost',
-    password: 'Joder123',
+    password: 'anashe',
     user: 'postgres',
     database: 'postgres'
 
