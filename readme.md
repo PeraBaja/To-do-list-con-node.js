@@ -8,6 +8,9 @@
 
 ### Built With
 
+- Node.js (ES Modules)
+- JavaScript
+- Local persistence with CSV, JSON files, and PostgreSQL database
 
 * [![Node][Nodejs.org]][Node-url]
 
@@ -26,14 +29,14 @@ You will need install node.js to run the project
   install from the official site:
   https://nodejs.org/en/download
   
-### Installation
+## Installation and Usage
 
-2. Clone the repo
-   ```sh
-   git clone https://github.com/PeraBaja/To-do-list-con-node.js/git
-   ```
-   
+1. Clone the repository  
+```bash
+git clone https://github.com/PeraBaja/To-do-list-con-node.js.git
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+2. Enter the project directory
 
 ## Commands you can try:
 
@@ -74,6 +77,10 @@ node ./main.mjs list todo
 ```
 node ./main.mjs list in-progress
 ```
+
+## Notes
+This project was developed as a personal practice to learn CLI development and task management logic.
+It supports local persistence with CSV and JSON files, and optionally with a PostgreSQL database.
 
 <!-- LICENSE -->
 ## License
